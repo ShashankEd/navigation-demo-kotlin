@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.navigation.Navigation
 import com.example.simplenavigationappdemo.R
 import kotlinx.android.synthetic.main.main_fragment.*
@@ -30,8 +31,8 @@ class MainFragment : Fragment() {
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
         // TODO: Use the ViewModel
         nameButton.setOnClickListener {
-            //load the second fragment, which can be achieved by adding action "mainToSecond"
-            Navigation.findNavController(it).navigate(MainFragmentDirections.mainToSecond())
+            //load the second fragment, which can be achieved by adding action "mainToSecond", and pass agr username
+            Navigation.findNavController(it).navigate(MainFragmentDirections.mainToSecond(username = editTextName.text!!.toString()))
         }
     }
 
