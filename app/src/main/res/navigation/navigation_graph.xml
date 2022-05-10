@@ -23,5 +23,21 @@
             android:name="username"
             app:argType="string"
             android:defaultValue="No name added" />
+        <action
+            android:id="@+id/secondToThird"
+            app:destination="@id/thirdFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/thirdFragment"
+        android:name="com.example.simplenavigationappdemo.ThirdFragment"
+        android:label="fragment_third"
+        tools:layout="@layout/fragment_third" >
+        <action
+            android:id="@+id/thirdToMain"
+            app:destination="@id/mainFragment" />
+        <argument
+            android:name="useraage"
+            app:argType="string"
+            android:defaultValue="No age added" />
     </fragment>
 </navigation>
